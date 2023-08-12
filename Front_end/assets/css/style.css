@@ -312,6 +312,18 @@
     height: 100%;
     object-fit: cover;
   }
+
+  .img-menu {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+
+  .img-menu:hover {
+    opacity: 0.7;
+    transform: scale(1.05);
+    transition: var(--transition-2);
+  }
   
   .section-subtitle {
     position: relative;
@@ -1121,6 +1133,13 @@
     right: 0;
   }
   
+  .hide-m {
+    display: none;
+  }
+
+  .show {
+    display: block;
+  }
   
   
   

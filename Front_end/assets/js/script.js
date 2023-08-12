@@ -168,3 +168,104 @@ window.addEventListener("mousemove", function (event) {
   }
 
 });
+
+
+/**
+ * BUTTON MENU
+ */
+
+const btnMenu = document.getElementById('btn')
+const itemMenuH = document.getElementsByClassName('hide-m')
+const btnSpan = btnMenu.children
+
+btnMenu.addEventListener('click', function(e){
+  e.preventDefault()
+})
+
+btnMenu.addEventListener('click', showMenu)
+function showMenu() {
+  itemMenuH.item(0).classList.add('show')
+  itemMenuH.item(1).classList.add('show')
+  itemMenuH.item(2).classList.add('show')
+  itemMenuH.item(3).classList.add('show')
+  btnSpan.item(0).innerHTML = 'View less menu'
+  btnSpan.item(1).innerHTML = 'View less menu'
+  btnMenu.classList.add('hide-m')
+}
+
+
+/**
+ * BUTTON MENU
+ */
+const btnSubmit = document.getElementById('btnb')
+const inputName = document.getElementById('name')
+const inputPhone = document.getElementById('phone')
+const inputPerson = document.getElementById('person')
+const inputDate = document.getElementById('date')
+const inputTime = document.getElementById('time')
+
+btnSubmit.addEventListener('click', function(e){
+  e.preventDefault()
+})
+
+btnSubmit.addEventListener('click', getData)
+function getData() {
+  checkErrName()
+  checkErrPhone()
+  checkErrDate()
+}
+
+
+/**
+ * CHECK ERR
+ */
+var pass = true
+function checkErrName() {
+  if (inputName.value == '') {
+    inputName.setAttribute('placeholder',"Please enter your name to continue");
+    inputName.style.border = '1px solid red'
+    inputName.focus()
+    pass = false
+  } else if (!isNaN(inputName.value)) {
+    inputName.setAttribute('placeholder',"Your name must be characters");
+    inputName.value = ''
+    inputName.style.border = '1px solid red'
+    inputName.focus()
+    pass = false
+  } else {
+    inputName.style.border = '1px solid var(--white-alpha-10)'
+    pass = true
+  }
+}
+
+function checkErrPhone() {
+  if (inputPhone.value == '') {
+    inputPhone.setAttribute('placeholder',"Please enter your phone to continue");
+    inputPhone.style.border = '1px solid red'
+    inputPhone.focus()
+    pass = false
+  } else if (isNaN(inputPhone.value)) {
+    inputPhone.setAttribute('placeholder',"Your phone must be number");
+    inputPhone.value = ''
+    inputPhone.style.border = '1px solid red'
+    inputPhone.focus()
+    pass = false
+  } else {
+    inputPhone.style.border = '1px solid var(--white-alpha-10)'
+    pass = true
+  }
+}
+
+function checkErrDate() {
+  if (inputDate.value == '') {
+    inputDate.style.border = '1px solid red'
+    inputDate.focus()
+    pass = false
+  }
+}
+
+console.log(inputTime.value);
+
+
+
+
